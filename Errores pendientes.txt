@@ -1,6 +1,0 @@
-Error MACH3
-	Error en el script inicioZona.js
-		Detalles: Al dar clic en detener o que el audio se reproduzca por completo el setimeout no se detiene, por lo que no le 			  permite volver a mostrat los globlos de texto ni la iluminación de las letras	
-
-	Implementar: Colores del texto fijos, hacer un video en la imagen a modo de solución de la sincronizacion
---------------------------------------------------------------------------------------------------------------------------------------------
