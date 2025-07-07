@@ -1,0 +1,274 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #545b44;
+}
+
+/*header*/
+
+
+main{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    background-color: #545b4400;
+}
+
+.contenido-principal{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo h2{
+    padding-right: 1rem;
+    font-weight: bolder;
+    color: #fff;
+
+}
+
+.indicacion{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+.content_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left: 30%;
+}
+
+.content_right{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-right: 30%;
+
+}
+
+.top-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+}
+
+.bottom-row{
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0%;
+
+}
+
+.btn-options{
+    display: flex;
+    height: 5rem;
+    width: auto;
+    justify-content: center;
+    align-items: center; 
+}
+
+.respuesta{
+    width: auto;
+    height: 14vh;
+}
+
+.btn-accept{
+    display: flex;
+    height: 5rem;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_txt{
+    color: rgb(135, 134, 134);
+}
+
+.content_control{
+    display: flex;
+    flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+/*Parte de retroalimentacions MACH5B*/
+.retroalimentacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.espacio{
+    padding: 5% 3% 3% 3%;
+    text-align: center;
+    justify-content: center;
+    border-style: inset;
+    border-color: #F8AC50;
+    border-radius: 10%;
+}
+
+/*inicio cambios retro*/
+.btn-reinicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.btn-link{
+    display: flex;
+    margin-top: 2%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+/*fin cambios retro*/
+
+.img_tam{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    border-radius: 8%;
+    margin-bottom: 6%;
+}
+
+.question-style{
+    display: flex;
+    font-size: 8vh;
+    font-weight: bold;
+    color: #fff;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.icon_tam{
+    width:  10vh;
+    height: 10vh;
+    cursor: pointer;
+}
+
+.svg-img{
+    filter: hue-rotate(32deg) saturate(200%);
+}
+
+.espacio-indicacion{
+    width: 80%;
+    height: auto;
+    border: 2px solid #0e7947 ;
+}
+
+.btn_ruta{
+    font-weight: bold;
+    color:#fff;
+}
+
+.siguientes-paginas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: auto;
+}
+.svg-sp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5%;
+    width: auto;
+}
+
+/*ACTUALIZACION BTN REINICIO Y SVG ACIERTOS Y ERRORRES*/
+.resultados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;   
+}
+
+.resultados-estilo{
+    padding-left:  5%; 
+    padding-right: 5%
+}
+
+.resultados div{
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-renicio{
+    cursor: pointer;
+}
+
+.svg-resultado{
+    padding-right: 15%;
+    padding-left:  15%;
+    width:  10vh;
+    height: 10vh;
+}
+
+/*FIN BTN REINICIO Y SVG ACIERTOS Y ERRORRES*/
+
+
+/*Limpia los flotantes despues de las columnas*/
+main::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}

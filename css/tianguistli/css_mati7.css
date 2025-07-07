@@ -1,0 +1,191 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #545b44;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 0.5rem;
+    background-color: #545b4400;
+    /*border: 3px solid rgb(173, 9, 126);*/
+}
+/*CSS PARA EL CONTENIDO*/
+.contenido-principal{
+    display: grid;
+    grid-template-columns: 4fr;
+    gap: 1rem;
+    background-color: #545b4400;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+}
+
+.video{
+    width: 40rem;
+    height: auto;
+    border-radius: 10%;
+}
+
+
+/*FIN CSS PARA EL CONTENIDO*/
+
+.siguientes-paginas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin-top: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+.indicacion{
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+/*INICIO CARRUSEL*/
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numberText {
+    color: #fff;
+    opacity: 70%;
+    font-size: 2.5vh;
+    padding: 50px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .svg-sp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5%;
+    width: auto;
+}
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+/*FIN CARRUSEL*/
+
+/*FIN DEL CSS DEL CONTENIDO*/
+
+
+
+
+/*Limpia los flotantes despues de las columnas*/
+section::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}

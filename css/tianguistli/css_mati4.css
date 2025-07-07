@@ -1,0 +1,150 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #545b44;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 0.5rem;
+    background-color: #545b4400;
+    /*border: 3px solid rgb(173, 9, 126);*/
+}
+/*CSS PARA EL CONTENIDO*/
+.contenido-principal{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1rem;
+    background-color: #545b4400;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+}
+
+.rueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid rgb(173, 9, 126);*/
+}
+
+.estilo-rueda{
+    width: 25rem;
+    height: auto;
+}
+
+.numeros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    /*border: 1px solid rgb(173, 9, 126);*/
+}
+
+.numeros span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;   
+    padding: 0.5%;
+    width: 80%;
+}
+
+.estilo-numero{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff00;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.estilo-numero p{
+    text-align: center;
+}
+
+.numero-rueda{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 10vh ;
+}
+
+/*FIN CSS PARA EL CONTENIDO*/
+
+.siguientes-paginas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin-top: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+.indicacion{
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+
+/*FIN DEL CSS DEL CONTENIDO*/
+
+
+/*Limpia los flotantes despues de las columnas*/
+section::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}

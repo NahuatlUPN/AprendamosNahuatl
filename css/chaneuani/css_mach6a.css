@@ -1,0 +1,262 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #545b44;
+}
+
+/*main*/
+main{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    background-color: #545b4400;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+.indicacion{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+.contenido-principal{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.contenido-izq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left: 30%;
+}
+
+.content_right{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-right: 30%;
+}
+
+.espacio-bocina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-respuestas{
+    display: flex;
+    height: 5rem;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+.espacio-botones{
+    display: flex;
+    height: 5rem;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.respuesta{
+    width:  auto;
+    height: 14vh;
+}
+
+.btn-options{
+    display: flex;
+    align-items: center;
+    height: 15rem;
+    width: auto;
+}
+
+.content_txt{
+    color: rgb(135, 134, 134);
+}
+
+.content_control{
+    display: flex;
+    flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.img_tam{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    border-radius: 8%;
+    margin-bottom: 6%;
+}
+
+.question-style{
+    color: #F8AC50;
+    font-size: 5vh;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.svg-tam{
+    height: 6rem;
+    width: auto;
+    cursor: pointer;
+}
+
+.svg-res-tam{
+    height: 30%;
+    width:  auto;
+    cursor: pointer;
+    padding-right: 3%;
+}
+
+.svg-res-tam:last-child{
+    padding-right: 0%;
+}
+
+.btn_ruta{
+    font-weight: bold;
+    color:#fff;
+}
+
+.btn_link{
+    display: flex;
+    margin-top: 2%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/*Parte de retroalimentacions MACH5B*/
+.retroalimentacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.aciertos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;   
+}
+
+.espacio{
+    padding: 5% 3% 3% 3%;
+    text-align: center;
+    justify-content: center;
+    border-style: inset;
+    border-color: #F8AC50;
+    border-radius: 10%;
+}
+
+/*ACTUALIZACION BTN REINICIO Y SVG ACIERTOS Y ERRORRES*/
+.resultados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;   
+}
+
+.resultados-estilo{
+    padding-left:  5%; 
+    padding-right: 5%
+}
+
+.resultados div{
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-reinicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+/*inicio cambios retro*/
+.btn-link{
+    display: flex;
+    margin-top: 2%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+/*fin cambios retro*/
+
+.svg-resultado{
+    padding-right: 15%;
+    padding-left:  15%;
+    width:  10vh;
+    height: 10vh;
+}
+
+/*FIN BTN REINICIO Y SVG ACIERTOS Y ERRORRES*/
+
+
+/*Limpia los flotantes despues de las columnas*/
+section::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}

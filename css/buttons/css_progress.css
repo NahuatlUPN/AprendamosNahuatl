@@ -1,0 +1,13 @@
+/*Para la barra de progreso*/
+.barLoad{
+    display: flex;
+    justify-content: space-evenly   ;
+    align-items: center;
+}
+
+.circle{
+    width:  3vh;
+    height: 3vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}

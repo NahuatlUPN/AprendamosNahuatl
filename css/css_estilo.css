@@ -1,0 +1,82 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    gap: 2rem;
+    background-color: #545b44;
+    color: #fff;
+    width: 100%;
+    height: 85vh;
+}
+
+.section_leftside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #630a1100;
+    color: #fff;
+    float: left;
+}
+
+.section_rightside {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    background-color: #630a1100;
+    color: #fff;
+    float: right;
+}
+
+.vineta-espacio{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20%;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.vineta{
+    width:  100%;
+    height: 100%;
+}
+
+.vineta-img{
+    display: flex;
+    width: 63vh;
+    height: auto;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,213 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #545b44;
+}
+
+/*CSS PARA EL CONTENIDO*/
+main{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 0.5rem;
+    background-color: #00000000;
+    width: auto;
+    /*border: 3px solid rgb(173, 9, 126);*/
+}
+
+.contenido-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /*border: 3px solid rgb(173, 9, 126);*/
+}
+
+.arbol{
+    width: 70%;
+    height: auto;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.espacio-botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33%;
+}
+
+.espacio-botones #opcion1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.espacio-botones #opcion1 span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-botones #opcion2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-botones #opcion2 span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-botones #opcion1 p{
+    text-align: center;
+    color: #fff;
+    padding-top: 5%;
+    font-size: 4vh;
+}
+
+.espacio-botones #opcion2 p{
+    text-align: center;
+    color: #fff;
+    padding-top: 5%;
+    font-size: 4vh;
+}
+
+.espacio-botones svg{
+    width: 12vh;
+    height: 12vh;
+    cursor: pointer;
+    color: #fff;
+}
+
+.palabra{
+    display: flex;
+    width: 100%;
+    height: 33%;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    padding-bottom: 3rem;
+}
+
+#encabezado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+#svgCorrect #svgWrong{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#svgCorrect #svgWrong svg{
+    width: auto;
+    height: 14vh;
+}
+
+.btn-avance{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    height: 33%;
+}
+
+.siguientes-paginas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+
+/*NO ELIMINAR*/
+.titulo{
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin-top: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+.indicacion{
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+/*COMIENZO DRAG&DROP*/
+.hide{
+    cursor: all-scroll;
+
+}
+
+.drag-over{
+    border: dashed 1px red;
+}
+
+.drop-targets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  
+    margin: 20px 0;
+  }
+/*FIN DRAG&DROP*/
+
+/*FIN DEL CSS DEL CONTENIDO*/
+
+
+/*Limpia los flotantes despues de las columnas*/
+section::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}

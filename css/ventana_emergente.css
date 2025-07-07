@@ -1,0 +1,67 @@
+/*estilo ventana de ejemplo*/
+.ventana-ejemplo-actualizada{
+    position: absolute;
+    width: 25%;
+    height: auto;
+    left: 65%;
+    top: 40%;
+    padding: 1%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-style: inset;
+    border-color: #F8AC50;
+    background-color: #8ea366;
+    color: #fff;
+    border-radius: 10%;
+    z-index: 5;
+}
+
+ul{
+    text-align: left;
+}
+
+a:link{
+    text-decoration:none
+  }
+  
+  a:visited{
+    text-decoration:none
+  }
+
+/*estilo para el titulo ejemplo */
+.ventana_ejemplo h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.ventana-ejemplo-actualizada p{
+    font-size: 2.5vh;
+    color: #fff;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+/*estilo para el boton ejemplo*/
+.btnejmplo{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.btnejmplo svg{
+    height: 5vh;
+    width: 5vh;
+    cursor: pointer;
+}
+
+/*Boton para las indicaciones ejemplo */
+.btn_i{
+    width: 85%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+

@@ -1,0 +1,138 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*header*/
+
+
+section {
+    background-color: #545b44;
+    color: #fff;
+	width: 100%;
+    height: auto;
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+section div{
+		flex: 1;
+        padding: 1%;
+        margin: 5px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+    margin-top: -5%;
+}
+
+.content{
+    display: flex;
+    height: auto;
+    width: 80%;
+    flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+    /*border: solid 3px #F8AC50;*/
+}
+
+.content_principal{
+    position: relative;
+    align-items: center;
+    width: auto;
+    height: auto;
+    /*border: solid 3px #F8AC50;*/
+}
+
+
+.img_fondo{
+    position: relative;
+    width: 120vh;
+    height: auto;
+    z-index: 1;
+    border-radius: 3%;
+}
+
+.img_btn{
+    position: absolute;
+    width:  16%;
+    height: auto;
+    z-index: 1;
+    border-radius: 5%;
+    cursor: pointer;
+    border: solid 3px #f8f8f7
+}
+
+.btn_ruta{
+    font-weight: bold;
+    color:#fff;
+}
+
+.btn_link{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+    /*border: solid 3px #F8AC50;*/
+}
+
+.indicacion{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-right: 10%;
+    color: #fff;
+}
+
+.svg-sp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0%;
+    width: auto;
+}
+
+/*Limpia los flotantes despues de las columnas*/
+section::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Chaneuani MA-CH-7</title>
+        <meta name = "author" content="Reyes Rojas Roberto" />
+        <meta name = "viewport" content="width=device-width, initial scale=1.0"/>
+        <meta charset = "UTF-8"/>
+        <meta keywords = "Nahuatl">
+        <meta name = "copyright" content = "Universidad Pedagogica Nacional"/>
+        <meta name = "description" content="Actividad de observacion 1"/>
+        <link rel = "stylesheet" type = "text/css" href="../../css/chaneuani/css_mach7.css">
+        <link rel = "stylesheet" type = "text/css" href="../../css/header_style.css">
+        <link rel = "stylesheet" type = "text/css" href="../../css/buttons/btn_ruta_style.css">
+        <link rel = "stylesheet" type = "text/css" href="../../css/buttons/btn_link_style.css">
+
+    </head>
+    <body>
+        <!--Barra de navegacion-->
+        <header>
+            <div class="header1 header-img">
+                <img src="../../src/img/inicio/aprendamosnahuatl.jpg" height="auto" alt="Logo">
+            </div>
+            <div class="header2 menu">
+                <a href = "../../index.html"><button class="header-button" role="button">Inicio</button></a>
+                <a href = "../lengua_nahuatl.html"><button class="header-button" role="button">La lengua Nahuatl</button></a>
+                <a href = "../caracteristicas_material.html"><button class="header-button" role="button">Caracteristicas del material</button></a>
+                <a href = "../modulos_aprendizaje.html"><button class="header-button_active" role="button">Modulos de aprandizaje</button></a>
+                <a href = "../apoyo"><button class="header-button" role="button">Apoyo</button></a>
+            </div>
+        </header>
+        
+        <nav>
+            <div class="menu_ruta">
+                <a href = "../chaneuani/mach3.html"><button class="button_ruta" role="button"><span class="text">Atras</span><span>Atras</span></button></a>
+                <a href = "../chaneuani/mach1.html"><button class="button_ruta" role="button"><span class="text">Chaneuani</span><span>MA-CH-1</span></button></a>
+                <a href = "../chaneuani/mach2.html"><button class="button_ruta" role="button"><span class="text">Menu de zonas</span><span>MA-CH-2</span></button></a>
+                <a href = "../chaneuani/mach3.html"><button class="button_ruta" role="button"><span class="text">Zona 1</span><span>MA-CH-3</span></button></a>
+                <a href = "../chaneuani/mach7.html"><button class="button_ruta" role="button"><span class="text">MA-CH-7</span><span>MA-CH-7</span></button></a>
+                
+            </div>
+        </nav>
+        
+        <section>
+            <div class="title">
+                <h2>¿Cani tiya?</h2>
+            </div>
+            <div class="content">
+                <div class="content_principal">
+                    <img src="../../src/img/mach7/Embocadero_panoramica.jpg" class="img_tam">
+                    <img src="../../src/img/mach7/TEOPAN.JPG" class="img_btn" style="top: 50%; left: 50%;">
+                </div>
+                <div class="btn_link">
+                    <a href="mach5a.html"><button class="button_link">MA-CH-5</button></a>
+                    <a href="mach6a.html"><button class="button_link">MA-CH-6</button></a>
+                </div>
+            </div>
+        </section>
+
+            <footer>
+                <div class="footer_left">
+                    <img src="../../src/img/inicio/upn_logo.png" alt="logo_UPN">
+                </div>
+                <div class="footer_right">
+                    <p>2024, UPN, Carretera al Ajusco No.24 Col. Heroes de Padierna Del. Tlalpan, C.P. 14200, Ciudad de Mexico. Tel. (55)5630-9700
+                        <br>Hecho en Mexico, todos los derechos reservados 2024.</p>
+                </div>
+            </footer>
+            <script src="../../scripts/chanueuani/mach4.js"></script>
+    </body>
+</html>

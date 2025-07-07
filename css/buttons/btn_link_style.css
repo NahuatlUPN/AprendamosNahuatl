@@ -1,0 +1,8 @@
+.button_link {
+  width: 15vh;
+  height: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }

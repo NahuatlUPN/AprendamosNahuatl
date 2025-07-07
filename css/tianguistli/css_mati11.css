@@ -1,0 +1,119 @@
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #545b44;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 0.5rem;
+    background-color: #545b4400;
+    /*border: 3px solid rgb(173, 9, 126);*/
+}
+/*CSS PARA EL CONTENIDO*/
+
+/*Layout*/
+.contenido-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    gap: 0.5em;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 50vh;
+}
+
+.color1{
+    color:rgb(229, 54, 188);
+}
+
+.color2{
+    color: rgb(33, 196, 201);
+}
+
+/*FIN CSS PARA EL CONTENIDO*/
+
+.siguientes-paginas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.titulo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin-top: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+.preg1{
+    color: rgb(247, 139, 222);
+}
+
+.preg2{
+    color: rgb(33, 196, 201);
+    
+}
+
+.icon_tam{
+    height: 10vh;
+    width: auto;
+    cursor: pointer;
+}
+
+.indicacion{
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid rgb(173, 9, 126);*/
+    padding: 1rem;
+    margin: 1rem 3rem;
+    color: #fff;
+}
+
+
+/*Limpia los flotantes despues de las columnas*/
+section::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Implementacion de diseño responsivo: hace que las dos columnas se apilen uno encima
+del otro en pantallas pequeñas*/
+@media (max-width:  1080){
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 40%) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}
