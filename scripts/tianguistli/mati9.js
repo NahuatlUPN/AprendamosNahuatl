@@ -1,5 +1,6 @@
 //VARIABLES DE LA ACTIVIDAD
 var indexPregunta = 0;
+var contador=0;
 var idPregunta = [];
 var ordenPregunta = [
     "preg1", 
@@ -79,24 +80,33 @@ if(intento === null){
 
 //FUNCIONAMIENTO ELEGIR RESPUESTA
 opcionResp.forEach(div => {
+    let index = respuestaSel.indexOf(texto);
     div.addEventListener("click", function(){
         texto = div.querySelector("p").textContent;
         //Verifica si hay elementos en el array
         if(respuestaSel.length < 0){
             btnAcept.style.display = "none";
         }else{
-            evaluar();
         }
         //Verifica si el texto ya esta seleccionado
-        let index = respuestaSel.indexOf(texto);
         if(index === -1){
+            contador++;
             respuestaSel.push(texto);
             div.classList.toggle("seleccionado");
         }else{
+            contador--;
             respuestaSel.splice(index, 1);
             div.classList.remove("seleccionado");
         }
-        console.log(respuestaSel);
+        if((indexPregunta===0 || indexPregunta===1 || indexPregunta===7 || indexPregunta === 10)  && contador===3){
+            evaluar();
+        }else if((indexPregunta===2 || indexPregunta===8) && contador===1){
+            evaluar();
+        }else if((indexPregunta===3 || indexPregunta===4 || indexPregunta===5 || indexPregunta===6 || indexPregunta===9 || indexPregunta===11) && contador===2){
+            evaluar();
+        }
+        console.log("Respuesta seleccionada (1): "+respuestaSel);
+        console.log("Respuesta seleccionada TAM: "+respuestaSel.length);
     });
 });
 //FIN FUNCIONAMIENTO ELEGIR RESPUESTA
@@ -123,9 +133,6 @@ function seleccionarPregunta(){
     })
     //Iluminar unidades de medida
     if(indexNivel === 0){
-        console.log("primer if donde indexNivel===0");
-        console.log("Intentando cargar imagen:", imgRuta[indexPregunta]);
-
         if(indexPregunta>0){
             document.getElementById(idPregMed[indexPregunta-1]).style.backgroundColor = "rgba(255, 255, 255, 0)";
         }
@@ -155,9 +162,6 @@ function evaluar(){
         div.style.pointerEvents = "none";
         div.classList.remove("seleccionado");
     });
-    if(indexPregunta >= respuestaSel.length){
-        console.log("Actividad finalizada");
-    }
     let respuestasAux = respuestas[indexPregunta];
     console.log("Respuestas correctas: " + respuestasAux);
     console.log("Respuestas seleccionadas: " + respuestaSel);
@@ -175,6 +179,9 @@ function evaluar(){
 }
 
 function limpiar(){
+    index=0;
+    respuestaSel = [];
+    contador = 0;
     btnSiguiente.style.display = "none";
     svgWrong.style.display = "none";
     svgCorrect.style.display = "none";
