@@ -1,5 +1,4 @@
 //VARIABLES DE LA ACTIVIDAD
-var indexPregunta = 0;
 var contador=0;
 var idPregunta = [];
 var ordenPregunta = [
@@ -10,7 +9,6 @@ var ordenPregunta = [
     "preg5", 
     "preg6" 
 ];
-indexNivel = 0;
 var respuestaSel = [];
 var texto = null;
 var aux = 0;
@@ -35,18 +33,28 @@ var opciones = [
 
 //RESPUESTAS DE LA ACTIVIDAD
 var respuestas = [
-    ["cafe", "tecpinchili", "cacahuatl"],
-    ["istatl", "xoxoc chili", "cacahuatl"],
-    ["sintli"],
-    ["culanto", "quilitl"],
-    ["xictomatl", "ahuacatl"],
-    ["sintli", "etl"],
-    ["chilpoctli", "exotl"],
-    ["ajoli", "istatl", "tecpinchili"],
-    ["sintli"],
-    ["xonacatl", "iyatl"],
-    ["ayohtli", "cuaxilotl", "tomatl"],
-    ["etl", "sintli"]
+    [
+        ["cafe", "tecpinchili", "cacahuatl"],
+        ["istatl", "xoxoc chili", "cacahuatl"],
+        ["sintli"],
+        ["culanto", "quilitl"],
+        ["xictomatl", "ahuacatl"],
+        ["sintli", "etl"],
+        ["chilpoctli", "exotl"],
+        ["ajoli", "istatl", "tecpinchili"],
+        ["sintli"],
+        ["xonacatl", "iyatl"],
+        ["ayohtli", "cuaxilotl", "tomatl"],
+        ["etl", "sintli"]
+    ],
+    [
+        ["chilpoctli", "exotl"],
+        ["ajoli", "istatl", "tecpinchili"],
+        ["sintli"],
+        ["xonacatl", "iyatl"],
+        ["ayohtli", "cuaxilotl", "tomatl"],
+        ["etl", "sintli"]
+    ]
 ]
 
 //VARIABLES ELEMENTOS HTML
@@ -70,12 +78,15 @@ idPreguntaHTML.forEach(idPreguntaHTML => {
 });
 
 /*ENLACE A RETRO.JS*/
+let indexPregunta = parseInt(localStorage.getItem('indexPregunta'));
+let indexNivel = parseInt(localStorage.getItem('indexNivel'));
 let intento = localStorage.getItem('intento');
 if(intento === null){
-    localStorage.setItem('intento','0')
+    localStorage.setItem('intento','0');
   }else{
     intento = parseInt(intento);
   }
+
 /*FIN ENLACE A RETRO.JS*/
 
 //FUNCIONAMIENTO ELEGIR RESPUESTA
@@ -98,12 +109,25 @@ opcionResp.forEach(div => {
             respuestaSel.splice(index, 1);
             div.classList.remove("seleccionado");
         }
-        if((indexPregunta===0 || indexPregunta===1 || indexPregunta===7 || indexPregunta === 10)  && contador===3){
-            evaluar();
-        }else if((indexPregunta===2 || indexPregunta===8) && contador===1){
-            evaluar();
-        }else if((indexPregunta===3 || indexPregunta===4 || indexPregunta===5 || indexPregunta===6 || indexPregunta===9 || indexPregunta===11) && contador===2){
-            evaluar();
+
+        switch(indexNivel){
+            case 0:
+                if((indexPregunta===0 || indexPregunta===1) && contador===3){
+                    evaluar();
+                }else if((indexPregunta===2) && contador===1){
+                    evaluar();
+                }else if((indexPregunta===3 || indexPregunta===4 || indexPregunta===5) && contador===2){
+                    evaluar();
+                }
+                break;
+            case 1:
+                if((indexPregunta===0 || indexPregunta===3 || indexPregunta===5) && contador===2){
+                    evaluar();
+                }else if((indexPregunta===1 || indexPregunta===4) && contador===3){
+                    evaluar();
+                }else if((indexPregunta===2) && contador===1){
+                    evaluar();
+                }
         }
         console.log("Respuesta seleccionada (1): "+respuestaSel);
         console.log("Respuesta seleccionada TAM: "+respuestaSel.length);
@@ -113,16 +137,18 @@ opcionResp.forEach(div => {
 
 //FUNCIONES
 function seleccionarPregunta(){
+    let respuestasAux = respuestas[indexNivel][indexPregunta];
+    console.log("Respuestas:  "+respuestasAux);
+    /*
     if(indexPregunta >= 6){
         indexNivel =1;
         aux = 0;
     }else if(indexPregunta>11){
         indexNivel =3;
         indexPregunta = 0;
-    }
+    }*/
     console.log("/////////////////////////////////");
     console.log("indexPregunta: " + indexPregunta);
-    console.log("aux: " + aux);
     console.log("imgRuta.length: " + imgRuta.length);
     console.log("indexNivel: " + indexNivel);
     //Colocar valores de los parrafos
@@ -132,37 +158,19 @@ function seleccionarPregunta(){
         }
     })
     //Iluminar unidades de medida
-    if(indexNivel === 0){
-        if(indexPregunta>0){
-            document.getElementById(idPregMed[indexPregunta-1]).style.backgroundColor = "rgba(255, 255, 255, 0)";
-        }
-        imgPregunta.src = imgRuta[indexPregunta];
-        document.getElementById(idPregMed[indexPregunta]).style.backgroundColor = "rgba(103, 111, 18, 0.447)";
-        
-    }else if(indexNivel===1){
-        console.log("segunfo if donde indexNivel===1");
-        console.log("Intentando cargar imagen:", imgRuta[indexPregunta-6]);
-
-        if(indexPregunta===6){
-            document.getElementById(idPregMed[indexPregunta-1]).style.backgroundColor = "rgba(255, 255, 255, 0)";
-        }else if(indexPregunta>6){
-            console.log("dsdsfsa");
-            document.getElementById(idPregMed[indexPregunta-7]).style.backgroundColor = "rgba(255, 255, 255, 0)";
-        }
-        imgPregunta.src = imgRuta[indexPregunta-6];
-        document.getElementById(idPregMed[indexPregunta-6]).style.backgroundColor = "rgba(103, 111, 18, 0.447)";
-        aux++;
-    }else{
-        indexPregunta = 0;
+    if(indexPregunta>0){
+        document.getElementById(idPregMed[indexPregunta-1]).style.backgroundColor = "rgba(255, 255, 255, 0)";
     }
-}
+    imgPregunta.src = imgRuta[indexPregunta];
+    document.getElementById(idPregMed[indexPregunta]).style.backgroundColor = "rgba(103, 111, 18, 0.447)";
+    }
     
 function evaluar(){
+    let respuestasAux = respuestas[indexNivel][indexPregunta];
     opcionResp.forEach(div => {
         div.style.pointerEvents = "none";
         div.classList.remove("seleccionado");
     });
-    let respuestasAux = respuestas[indexPregunta];
     console.log("Respuestas correctas: " + respuestasAux);
     console.log("Respuestas seleccionadas: " + respuestaSel);
     console.log("pregunta: " + indexPregunta);
@@ -171,7 +179,7 @@ function evaluar(){
         console.log("Respuesta correcta")
         svgCorrect.style.display = "flex";
     }else{
-        console.log("Respuesta incorrecta, LA RESPUESTA CORRECTA ES: " + respuestas[indexPregunta]);
+        console.log("Respuesta incorrecta, LA RESPUESTA CORRECTA ES: " + respuestasAux);
         svgWrong.style.display = "flex";
     }
     btnAcept.style.display = "none";
@@ -190,17 +198,22 @@ function limpiar(){
     opcionResp.forEach(div => {
         div.style.pointerEvents = "auto";
     });
-    indexPregunta++;
-    if(indexPregunta<12){
-        seleccionarPregunta();
-    }else{
+    if(indexPregunta===5){
         localStorage.setItem('correct', correct.toString());
         localStorage.setItem('wrong', wrong.toString());
         intento++;
         localStorage.setItem('intento', intento.toString());
         window.location.href = "../../pages/tianguistli/mati9b.html";
+    }else if(indexPregunta===11){
+        localStorage.setItem('correct', correct.toString());
+        localStorage.setItem('wrong', wrong.toString());
+        intento++;
+        localStorage.setItem('intento', intento.toString());
+        window.location.href = "../../pages/tianguistli/mati9b.html";
+    }else{
+        indexPregunta++;
+        seleccionarPregunta();
     }
-
 }
 
 //FIN FUNCIONES
