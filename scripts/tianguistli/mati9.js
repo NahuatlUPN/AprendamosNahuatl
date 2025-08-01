@@ -177,9 +177,11 @@ function evaluar(){
 
     if(respuestaSel.length === respuestasAux.length && respuestaSel.every(elem => respuestasAux.includes(elem))){
         console.log("Respuesta correcta")
+        correct++;
         svgCorrect.style.display = "flex";
     }else{
         console.log("Respuesta incorrecta, LA RESPUESTA CORRECTA ES: " + respuestasAux);
+        wrong++;
         svgWrong.style.display = "flex";
     }
     btnAcept.style.display = "none";
@@ -201,12 +203,8 @@ function limpiar(){
     if(indexPregunta===5){
         localStorage.setItem('correct', correct.toString());
         localStorage.setItem('wrong', wrong.toString());
-        intento++;
-        localStorage.setItem('intento', intento.toString());
-        window.location.href = "../../pages/tianguistli/mati9b.html";
-    }else if(indexPregunta===11){
-        localStorage.setItem('correct', correct.toString());
-        localStorage.setItem('wrong', wrong.toString());
+        localStorage.setItem('indexPregunta', indexPregunta.toString());
+        localStorage.setItem('indexNivel', indexNivel.toString());
         intento++;
         localStorage.setItem('intento', intento.toString());
         window.location.href = "../../pages/tianguistli/mati9b.html";

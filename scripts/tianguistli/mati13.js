@@ -37,10 +37,11 @@ const bloqueRes = document.getElementById("bloqueRes");
 const espacios = document.querySelectorAll('.espacio');
 const items = document.querySelectorAll('.opcion'); // Elementos arrastrables
 var cajas = document.querySelectorAll('.espacio');// Elementos contenedores
-var next = document.getElementById("next");
 var aceptar = document.getElementById("aceptar");
 var imgRespuesta = document.getElementById("result")
 var imgResruta = ["../../src/icons/correct_update.svg", "../../src/icons/wrong_update.svg"];
+const txt1=document.getElementById("txt1");
+const txt2=document.getElementById("txt2");
 //Guardar el contenedor orignal de los atributos <p> como atributo personalizado 
 document.querySelectorAll('p[draggable="true"]').forEach(item => {
     item.dataset.originalParent = item.parentElement.id;
@@ -114,16 +115,16 @@ function drop(e){
         //Verificar si todos los elementos han sido colocados
         switch(index){
             case 0:
-                (cont === 2) && (next.style.display = "flex");
+                (cont === 2) && obtenerRespuestas();
                 break;
             case 1:
-                (cont === 2) && (next.style.display = "flex");
+                (cont === 2) && obtenerRespuestas();
                 break;
             case 2:
-                (cont === 4) && (next.style.display = "flex");
+                (cont === 4) && obtenerRespuestas();
                 break;
             case 3:
-                (cont === 1) && (next.style.display = "flex");
+                (cont === 1) && obtenerRespuestas();
                 break;
             default:
                 window.alert("Ha ocurrido un error");
@@ -141,41 +142,47 @@ function mostrarPregunta(){
         case 0: 
             idPregunta.innerText = listaPregunta[index]; 
             idEspacio1.style.display = "flex";
-            idEspacio1.style.top = "25%";
-            idEspacio1.style.left = "67%";
-            idEspacio2.style.top = "35%";
-            idEspacio2.style.left = "67%";
+            idEspacio1.style.top = "30%";
+            idEspacio1.style.left = "65%";
+            idEspacio2.style.top = "38%";
+            idEspacio2.style.left = "65%";
             idEspacio2.style.display = "flex";
             break;
         case 1:
+            txt1.style.display="flex"
+            txt1.style.left="63%"
+            txt1.style.top = "30%";
+            txt2.style.display="flex"
+            txt2.style.left="80%"
+            txt2.style.top = "38%";
             idPregunta.innerText = ""; 
             idEspacio1.style.display = "flex";
             idEspacio2.style.display = "flex";
-            idEspacio1.style.top = "25%";
-            idEspacio1.style.left = "67%";
-            idEspacio2.style.top = "35%";
-            idEspacio2.style.left = "67%";
+            idEspacio1.style.top = "30%";
+            idEspacio1.style.left = "65%";
+            idEspacio2.style.top = "38%";
+            idEspacio2.style.left = "65%";
             break;
         case 2:
             idPregunta.innerText = listaPregunta[index]; 
             idEspacio1.style.display = "flex";
-            idEspacio1.style.top = "26%";
-            idEspacio1.style.left = "59%";
+            idEspacio1.style.top = "31%";
+            idEspacio1.style.left = "57.5%";
             idEspacio2.style.display = "flex";
-            idEspacio2.style.top = "26%";
-            idEspacio2.style.left = "75%";
+            idEspacio2.style.top = "31%";
+            idEspacio2.style.left = "72.5%";
             idEspacio3.style.display = "flex";
-            idEspacio3.style.top = "33%";
-            idEspacio3.style.left = "59%";
+            idEspacio3.style.top = "36.5%";
+            idEspacio3.style.left = "57.5%";
             idEspacio4.style.display = "flex";
-            idEspacio4.style.top = "33%";
-            idEspacio4.style.left = "75%";
+            idEspacio4.style.top = "36.5%";
+            idEspacio4.style.left = "72.5%";
             break;
         case 3:
             idPregunta.innerText = listaPregunta[index]; 
             idEspacio1.style.display = "flex";
-            idEspacio1.style.top = "30%";
-            idEspacio1.style.left = "67%";
+            idEspacio1.style.top = "34%";
+            idEspacio1.style.left = "65.5%";
             idEspacio2.style.display = "none"
             idEspacio3.style.display = "none"
             idEspacio4.style.display = "none"
@@ -193,6 +200,7 @@ function obtenerRespuestas(){
     switch(index){
         case 0:
         case 1:
+            idPregunta.innerText = listaPregunta[index]; 
             espaciosUsados = [idEspacio1, idEspacio2];
             break;
         case 2:
@@ -291,7 +299,6 @@ function evaluar(){
     }
     bloqueOp.style.display = "none";
     bloqueRes.style.display = "flex";
-    next.style.display = "none";
     aceptar.style.display = "flex";
     console.log("Aciertos " + correct);
     console.log("Errores " + wrong);
@@ -304,6 +311,8 @@ function limpiarRespuestas(){
     }
     aceptar.style.display = "none";
     bloqueRes.style.display = "none";
+    txt1.style.display="none";
+    txt2.style.display="none";
     bloqueOp.style.display = "flex";
 
     espacios.forEach(espacio => {
@@ -348,6 +357,6 @@ function scrollScreen(){
     });
 }
 
-next.addEventListener("click", obtenerRespuestas);
+//next.addEventListener("click", obtenerRespuestas);
 aceptar.addEventListener("click", limpiarRespuestas);
 mostrarPregunta();

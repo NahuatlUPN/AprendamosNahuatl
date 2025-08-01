@@ -20,8 +20,8 @@ function mostrarRetro(){
     document.getElementById("errores").innerText = wrong;
 
     document.getElementById("tr1").style.display = "block";
-    //document.getElementById("tr2").style.display = "none";
-    //document.getElementById("tr3").style.display = "none";
+    document.getElementById("tr2").style.display = "none";
+    document.getElementById("tr3").style.display = "none";
 }
 
 if(continuar){

@@ -6,7 +6,7 @@ let actmati14b = document.getElementById("reiniciarmati14b");
 
 function mostrarRetro(){
     console.log("intento = " + intento);
-    if(intento>3){
+    if(intento>4){
         intento=0;
     }
 
@@ -39,11 +39,6 @@ function mostrarRetro(){
 if(actmati14b){
     actmati14b.addEventListener("click", function(){
         window.location.href = "../../pages/tianguistli/mati14.html";
-        localStorage.setItem('intento', intento.toString());
-    });
-    document.getElementById("reiniciarmati13b").addEventListener("click", function() {
-        window.location.href = "../../pages/tianguistli/mati14.html";
-        //intento = 0;
         localStorage.setItem('intento', intento.toString());
     });
 }

@@ -330,10 +330,12 @@
               <div class="espacio-pregunta">
                 <div class="estilo-pregunta" id="idPregunta"></div>
                 <div class="dialogo-respuesta">
+                  <p id="txt1" class="texto-espacio" style="display: none;">¿</p>
                   <div class="espacio" style="display: none;" id="espacio1"></div>
                   <div class="espacio" style="display: none;" id="espacio2"></div>
                   <div class="espacio" style="display: none;" id="espacio3"></div>
                   <div class="espacio" style="display: none;" id="espacio4"></div>
+                  <p id="txt2" class="texto-espacio" style="display: none;">?</p>
                 </div>
               </div>
               <div class="espacio-respuesta" id="bloqueOp">
@@ -362,8 +364,13 @@
                 <img class = "result" id="result" src="">
               </div>
               <div class="btn-avance">
-                <button id="next" style="display: none;">Siguiente</button>
-                <button id="aceptar" style="display: none;">Aceptar</button>
+                <svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" id="aceptar" style="display: none;" class="button_link">
+                  <path d="M10 25H70M70 25L50 10M70 25L50 40" 
+                        stroke="#ee9f48" 
+                        stroke-width="8" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"/>
+                </svg>
               </div>
             </section>
             <audio src="" id="audio"></audio>

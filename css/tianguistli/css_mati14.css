@@ -76,15 +76,24 @@ main{
 .espacio{
     position: absolute;
     border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    width: 6.1em;
+    width: 5.8em;
     height: 1em;
+}
+
+.texto-espacio{
+    position: absolute;
+    z-index: 1;
 }
 
 .estilo-pregunta{
     position: absolute;
-    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18vh;
+    width: 20vh;
+    text-align: center;
+    top: 19.5%;
     left: 37%;
     transform: translate(-50%, -50%);
     color: black;
