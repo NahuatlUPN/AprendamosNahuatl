@@ -318,6 +318,6 @@ document.querySelectorAll("svg[id^='option']").forEach(svg => {
   });
 });
 
+console.log(intento);
 document.getElementById("accept").addEventListener("click", evRespuesta);
-
 document.getElementById("next").addEventListener("click", sigPregunta);
